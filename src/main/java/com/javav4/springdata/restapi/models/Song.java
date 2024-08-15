@@ -11,13 +11,17 @@ import java.util.Date;
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
     @Size(min=1, message="This field is currently empty")
+    @Column(name = "name")
     private String name;
     @Size(min = 1, message = "This field is currently empty")
+    @Column(name = "artist")
     private String artist;
 
     @NotNull
+    @Column(name = "rating")
     private int rating;
     @Column(updatable=false)
     private Date createdAt;
